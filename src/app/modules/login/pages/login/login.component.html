@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="logo">
+    <img src="../../../../../assets/images/logo.png" width="250" height="100"  />
+  </div>
+  <div class="login-form">
+    <form>
+      <h2 class="text-center">Login</h2>
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+      </div>
+      <div class="form-group" *ngIf="!forgotPasswordForm">
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="submit($event)">{{!forgotPasswordForm ? 'Sign in' : 'Recover password'}}</button>
+      </div>
+      <div class="bottom-action clearfix">
+        <!-- <label class="float-left form-check-label" *ngIf="!forgotPasswordForm" ><input type="checkbox"> Remember me</label> -->
+        <a class="float-right" (click)="forgotPassword()">{{!forgotPasswordForm ?  'Forgot Password?' : 'Back to login'}}</a>
+      </div>
+    </form>
+    <!-- <p class="text-center small">Don't have an account? <a href="#">Sign up here!</a></p> -->
+  </div>
+</div>
